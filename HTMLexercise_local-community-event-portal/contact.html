@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register – Community Event Portal</title>
+    
+  </head>
+
+  <body>
+    <!-- NAVIGATION -->
+    <header>
+      <nav class="navbar">
+        <h2>City Event Portal</h2>
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="contact.html">Register</a>
+        <a href="help.html" target="_blank">Help</a>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <!-- Exercise 5: Registration Form -->
+      <section>
+        <h2>Event Registration</h2>
+
+        <form id="eventForm" action="#" method="POST">
+          <div>
+            <label for="name">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name"
+              autofocus
+              required
+            />
+          </div>
+
+          <div>
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="date">Event Date</label>
+            <input type="date" id="date" required />
+          </div>
+
+          <!-- Exercise 8: onchange saves to localStorage -->
+          <div>
+            <label for="eventType">Event Type</label>
+            <select id="eventType" onchange="savePreference()" required>
+              <option value="">-- Select Event --</option>
+              <option value="Music Festival">Music Festival</option>
+              <option value="Sports Meet">Sports Meet</option>
+              <option value="Food Fair">Food Fair</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              placeholder="Any special requests…"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit">Register Now</button>
+        </form>
+
+        <!-- Exercise 5: output element -->
+        <br />
+        <p><strong>Confirmation:</strong></p>
+        <output id="result"></output>
+
+        <br />
+        <button class="secondary" onclick="clearPreferences()">
+          Clear Saved Preferences
+        </button>
+      </section>
+
+      <hr />
+
+      <!-- Exercise 6: Live Feedback + Event Handling -->
+      <section>
+        <h2>Live Feedback Section</h2>
+
+        <!-- onblur phone validation -->
+        <div class="field-group">
+          <label for="phone">Phone Number</label>
+          <input
+            type="text"
+            id="phone"
+            onblur="validatePhone()"
+            placeholder="10-digit number"
+          />
+          <p id="phoneMsg"></p>
+        </div>
+
+        <!-- onchange event fee -->
+        <div class="field-group">
+          <label for="eventFee">Select Event to See Fee</label>
+          <select id="eventFee" onchange="showFee()">
+            <option value="">-- Select --</option>
+            <option value="100">Music Festival – ₹100</option>
+            <option value="50">Sports Meet – ₹50</option>
+            <option value="30">Food Fair – ₹30</option>
+          </select>
+          <p id="feeDisplay"></p>
+        </div>
+
+        <!-- onclick confirmation -->
+        <div class="field-group">
+          <button onclick="confirmSubmit()">Confirm Registration</button>
+          <p id="confirmMsg"></p>
+        </div>
+
+        <!-- ondblclick enlarge-->
+        <div class="field-group">
+          <p style="font-size: 0.85rem; color: #666">
+            Double-click the image to enlarge:
+          </p>
+          <img
+            id="eventImg"
+            src="images/Music.jpeg"
+            ondblclick="enlargeImage()"
+            alt="Event Image"
+            style="width: 150px; cursor: zoom-in"
+          />
+        </div>
+
+        <!-- onkeyup character counter -->
+        <div class="field-group">
+          <label for="feedback">Your Feedback</label>
+          <textarea
+            id="feedback"
+            onkeyup="countChars()"
+            placeholder="Write your feedback…"
+          ></textarea>
+          <p>Characters typed: <span id="charCount">0</span></p>
+        </div>
+      </section>
+
+      <hr />
+
+      <!-- Exercise 9: Geolocation -->
+      <section id="geolocation">
+        <h2>Find Nearby Events</h2>
+        <p style="margin-bottom: 12px; color: #555">
+          Allow location access to discover community events near you.
+        </p>
+        <button onclick="findNearbyEvents()">📍 Find Nearby Events</button>
+        <p id="geoResult" style="margin-top: 12px"></p>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy; 2026 City Council Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

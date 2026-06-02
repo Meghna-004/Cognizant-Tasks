@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events Gallery – Community Event Portal</title>
+    
+  </head>
+
+  <body>
+    <!-- NAVIGATION -->
+    <header>
+      <nav class="navbar">
+        <h2>City Event Portal</h2>
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="contact.html">Register</a>
+        <a href="help.html" target="_blank">Help</a>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <!-- Exercise 4: Image Gallery Table -->
+      <section id="events">
+        <h2>Community Event Gallery</h2>
+
+        <table>
+          <caption>
+            Past Community Events — Gallery
+          </caption>
+          <tr>
+            <td>
+              <img
+                src="images/Music.jpeg"
+                alt="Music Festival"
+                title="Annual Music Festival"
+                width="200"
+                height="150"
+              />
+              <p class="highlight">Music Festival</p>
+            </td>
+            <td>
+              <img
+                src="images/Cleanliness2.jpeg"
+                alt="Cleanliness Drive"
+                title="City Cleanliness Drive"
+                width="200"
+                height="150"
+              />
+              <p class="highlight">Cleanliness Drive</p>
+            </td>
+            <td>
+              <img
+                src="images/Food.avif"
+                alt="Food Fair"
+                title="Community Food Fair"
+                width="200"
+                height="150"
+              />
+              <p class="highlight">Food Fair</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                src="images/Sports.jpeg"
+                alt="Sports Meet"
+                title="Annual Sports Meet"
+                width="200"
+                height="150"
+              />
+              <p class="highlight">Sports Meet</p>
+            </td>
+            <td>
+              <img
+                src="images/Art.jpeg"
+                alt="Art Exhibition"
+                title="Local Art Exhibition"
+                width="200"
+                height="150"
+              />
+              <p class="highlight">Art Exhibition</p>
+            </td>
+            <td>
+              <img
+                src="images/Meet.avif"
+                alt="Community Meetup"
+                title="Neighbourhood Meetup"
+                width="200"
+                height="150"
+              />
+              <p class="highlight">Community Meetup</p>
+            </td>
+          </tr>
+        </table>
+      </section>
+
+      <hr />
+
+      <!-- Exercise 7: Video with oncanplay -->
+      <section id="video">
+        <h2>Event Promo Video</h2>
+        <p id="videoStatus">Loading video…</p>
+        <video width="480" controls oncanplay="videoReady()">
+          <source src="videos/promo.mp4" type="video/mp4" />
+          Your browser does not support the HTML5 video element.
+        </video>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy; 2026 City Council Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
